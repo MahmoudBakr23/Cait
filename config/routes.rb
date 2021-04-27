@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :admins, only: %i[show edit update]
+  resources :admins, only: %i[show edit update destroy]
   get '/sign_up', to: 'admins#new'
   post '/sign_up', to: 'admins#create'
   get '/login', to: 'sessions#new'

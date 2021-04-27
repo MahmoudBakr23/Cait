@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    admin = Admin.find_by(password: params[:sessions][:password])
+    admin = Admin.find_by(password: params[:sessions][:password], email: params[:sessions][:email])
     if admin
       log_in(admin)
       flash[:primary] = 'You have logged in!'
