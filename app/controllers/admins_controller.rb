@@ -29,7 +29,7 @@ class AdminsController < ApplicationController
   def update
     if @admin.update(admin_params)
       flash[:primary] = 'Admin has been updated!'
-      redirect_to root_path
+      redirect_to admin_path(@admin)
     else
       flash[:danger] = 'Something went wrong!'
       render 'edit'
@@ -54,6 +54,6 @@ class AdminsController < ApplicationController
   end
 
   def admin_params
-    params.require(:admin).permit(:username, :email, :password)
+    params.require(:admin).permit(:username, :email, :password, :image)
   end
 end

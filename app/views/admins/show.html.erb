@@ -1,6 +1,13 @@
 <h1>Admins#show</h1>
 <p>Find me in app/views/admins/show.html.erb</p>
+
 <h2><%= @admin.username %></h2>
 <h3><%= @admin.email %></h3>
+
+<% if @admin.image.exists? %>
+    <%= image_tag @admin.image.url %>
+<% end %>
+
+<%= link_to  "Edit", edit_admin_path(@admin) %>
 <%= link_to  "Logout", logout_path, method: :delete %>
 <%= link_to  "Delete my adminship", admin_path(@admin), method: :delete %>
