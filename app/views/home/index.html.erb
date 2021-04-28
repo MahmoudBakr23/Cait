@@ -1,2 +1,14 @@
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
+
+<%= image_tag current_admin.image.url %>
+
+<% if !@profiles.empty? %>
+    <% @profiles.each do |profile| %>
+        <h3><%= profile.title %></h3>
+        <p><%= profile.body %></p>
+        <%= image_tag profile.image.url %>
+    <% end %>
+<% else %>
+    <p>There are no profiles for now!</p>
+<% end %>

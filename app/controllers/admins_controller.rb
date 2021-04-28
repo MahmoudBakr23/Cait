@@ -6,7 +6,7 @@ class AdminsController < ApplicationController
 
   def new
     @admin = Admin.new
-    # admin_check
+    admin_check
   end
 
   def create
