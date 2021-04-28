@@ -1,7 +1,9 @@
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
 
-<%= image_tag current_admin.image.url %>
+<% if current_admin && !current_admin.image.nil? %>
+    <%= image_tag current_admin.image.url %>
+<% end %>
 
 <% if !@profiles.empty? %>
     <% @profiles.each do |profile| %>

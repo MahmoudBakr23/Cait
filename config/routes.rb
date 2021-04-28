@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :blogs
   resources :profiles
   resources :admins, only: %i[show edit update destroy]
   get '/sign_up', to: 'admins#new'

@@ -41,6 +41,12 @@ class ProfilesController < ApplicationController
 
   private
 
+  def set_profile
+    @profile = Profile.find(
+    params[:id]
+    )
+  end
+
   def profile_params
     params.require(:profile).permit(:title, :body, :image)
   end

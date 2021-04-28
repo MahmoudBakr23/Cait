@@ -1,0 +1,11 @@
+<h1>Blogs#index</h1>
+<p>Find me in app/views/blogs/index.html.erb</p>
+
+
+<% if !@blogs.empty? %>
+    <% @blogs.each do |blog| %>
+        <h1><%= link_to blog.title, blog_path(blog) %></h1>
+    <% end %>
+<% else %>
+    <p>There are no blogs here yet</p>
+<% end %>
