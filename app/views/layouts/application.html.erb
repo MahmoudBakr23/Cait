@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </head>
-
   <body>
     <% flash.each do |type, message| %>
       <%= content_tag :p, class: "animated fadeInDown m-0 text-center text-#{type} alert alert-#{type}" do -%>
@@ -21,6 +18,37 @@
         <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
       <% end -%>
     <% end %>
-    <%= yield %>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-3">
+          <header>
+            <nav class="top-nav">
+              <ul class="list-unstyled m-0">
+                <li class="home nav-item d-flex align-items-center">
+                    <i class="fas fa-home"></i>
+                    <a href="#" class="home-link d-none pl-2">Home</a>
+                </li>
+                <li class="profile nav-item d-flex align-items-center">
+                    <i class="fas fa-user-circle"></i>
+                    <a href="#" class="profile-link d-none pl-2">Profile</a>
+                </li>
+                <li class="about nav-item d-flex align-items-center">
+                    <i class="fas fa-info-circle"></i>
+                    <a href="#" class="about-link d-none pl-2">About</a>
+                </li>
+                <li class="blog nav-item d-flex align-items-center">
+                    <i class="fas fa-book"></i>
+                    <a href="#" class="blog-link d-none pl-2">Blog</a>
+                </li>
+              </ul>
+            </nav>
+          </header>
+        </div>
+        <div class="col-9">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </html>
