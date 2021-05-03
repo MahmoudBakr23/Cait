@@ -3,5 +3,6 @@ class HomeController < ApplicationController
   def index
     current_admin
     @profiles = Profile.all
+    @mains = Main.all
   end
 end

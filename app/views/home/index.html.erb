@@ -5,6 +5,11 @@
     <%= image_tag current_admin.image.url %>
 <% end %>
 
+<% @mains.each do |main| %>
+    <%= image_tag main.image.url %>
+    <h3><%= main.head %></h3>
+<% end %>
+
 <% if !@profiles.empty? %>
     <% @profiles.each do |profile| %>
         <h3><%= profile.title %></h3>
